@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "segoe ui", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(to top left, #9b59b6, #1abc9c);
+}
+
+header {
+  color: white;
+  letter-spacing: 10px;
+  padding-top: 2%;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 40px;
+}
+
+.section {
+  max-width: 960px;
+  margin: 2% auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  position: relative;
+  transition: all 0.4s linear;
+  transform-style: preserve-3d;
+  margin: 4px;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card:active {
+  transform: scale(0.91);
+  transition: transform 0.2s;
+}
+
+.card,
+.back,
+.front {
+  height: 140px;
+  width: 100px;
+  border-radius: 25%;
+}
+
+.back,
+.front {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  z-index: 2;
+  background: url("./images/diamond.png") center / 50% no-repeat;
+  background-color: #f2f3f4;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: aliceblue;
+}
+
+.selected {
+  transform: rotateY(180deg);
+}
+
+.match .front {
+  background: #6589f9;
+}
+
+#state {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+#time {
+  padding-right: 10px;
+}
+
+#popup.hidden {
+  display: none;
+}
+
+#popup.show {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0 20px;
+  background-color: #ffffff;
+  border-radius: 15%;
+}
+
+.show p:first-child,
+.show #final {
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 15px 50px 10px;
+  color: #6186aa;
+}
+
+@media (max-width: 1100px) {
+  .card,
+  .back,
+  .front {
+    height: 120px;
+    width: 80px;
+  }
+  .section {
+    max-width: 750px;
+    margin: 5% auto;
+  }
+}
+
+@media (max-width: 750px) {
+  .card,
+  .back,
+  .front {
+    height: 110px;
+    width: 70px;
+  }
+  .section {
+    max-width: 630px;
+  }
+}
+
+@media (max-width: 650px) {
+  .card,
+  .back,
+  .front {
+    height: 100px;
+    width: 60px;
+  }
+  .section {
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 540px) {
+  header h1 {
+    font-size: 30px;
+  }
+  .card,
+  .back,
+  .front {
+    height: 85px;
+    width: 45px;
+  }
+  .section {
+    max-width: 430px;
+  }
+  header {
+    padding-top: 5%;
+  }
+}
+
+@media (max-width: 425px) {
+  header {
+    padding-top: 10%;
+  }
+  .card,
+  .back,
+  .front {
+    height: 70px;
+    width: 30px;
+  }
+  .section {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 320px) {
+  header {
+    padding-top: 3%;
+  }
+  #popup > div {
+    width: 250px;
+  }
+  #popup.show {
+    width: 250px;
+  }
+  .show p:first-child {
+    padding: 0 0;
+  }
+  .show p:first-child,
+  .show #final {
+padding: 5px 25px;
+}
+}
+
+@media (max-width: 305px) {
+  .card,
+  .back,
+  .front {
+    height: 60px;
+    width: 20px;
+  }
+  .section {
+    max-width: 250px;
+  }
+}
